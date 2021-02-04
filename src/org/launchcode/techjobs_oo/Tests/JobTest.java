@@ -65,4 +65,31 @@ public void testSettingJobId2(){
     assertFalse(job1 == job2);
 }
 
+    @Test
+    public void testToStringObjectOutput(){
+
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    //job1.toString();
+
+    assertTrue(job1.toString(job1).startsWith("\n") == job1.toString(job1).endsWith("\n"));
+
+
+    }
+
+    @Test
+    public void testOutputLines(){
+
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("ID: "+1+"\n", "ID: "+job1.getId()+"\n");
+        assertEquals("Name: Product tester\n", "Name: "+job1.getName()+"\n");
+        assertEquals("Employer: ACME\n", "Employer: "+job1.getEmployer().toString()+"\n");
+        assertEquals("Location: Desert\n", "Location: "+job1.getLocation().toString()+"\n");
+        assertEquals("Position Type: Quality control\n", "Position Type: "+job1.getPositionType().toString()
+        +"\n");
+        assertEquals("Core Competency: Persistence\n", "Core Competency: "+job1.getCoreCompetency()
+        .toString()+"\n");
+    }
 }
