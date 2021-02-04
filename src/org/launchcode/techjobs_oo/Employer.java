@@ -21,7 +21,11 @@ public class Employer {
 
     @Override
     public String toString() {
-        return value;
+        if(this.value.equals("")){
+            return "Data not available";
+        } else {
+            return value;
+        }
     }
 
     @Override

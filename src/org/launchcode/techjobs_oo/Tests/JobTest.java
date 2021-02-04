@@ -92,4 +92,14 @@ public void testSettingJobId2(){
         assertEquals("Core Competency: Persistence\n", "Core Competency: "+job1.getCoreCompetency()
         .toString()+"\n");
     }
+
+    @Test
+    public void  testIfFieldIsEmpty(){
+
+        Job job1 = new Job("Product tester", new Employer(""), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals("Employer: Data not available", "Employer: "+job1.getEmployer().toString());
+
+    }
 }
