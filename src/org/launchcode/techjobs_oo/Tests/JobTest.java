@@ -62,7 +62,7 @@ public void testSettingJobId2(){
     Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
             new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-    assertFalse(job1 == job2);
+    assertFalse(job1.equals(job2));
 }
 
     @Test
@@ -72,7 +72,8 @@ public void testSettingJobId2(){
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
     //job1.toString();
 
-    assertTrue(job1.toString(job1).startsWith("\n") == job1.toString(job1).endsWith("\n"));
+    assertTrue(job1.toString(job1).startsWith("\n"));
+    assertTrue(job1.toString(job1).endsWith("\n"));
 
 
     }
